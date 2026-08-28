@@ -22,6 +22,10 @@
                     <flux:navlist.item icon="users" :href="route('admin.usuarios.index')"
                                 :current="request()->routeIs('admin.usuarios.index')" wire:navigate>Usuarios
                     </flux:navlist.item>
+
+                    <flux:navlist.item icon="video-camera" :href="route('admin.grabaciones.index')"
+                                :current="request()->routeIs('admin.grabaciones.index')" wire:navigate>Grabaciones
+                    </flux:navlist.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 

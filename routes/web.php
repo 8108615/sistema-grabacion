@@ -28,5 +28,9 @@ Route::get('/admin/usuario/{id}/edit', [App\Http\Controllers\UsuarioController::
 Route::put('/admin/usuario/{id}', [App\Http\Controllers\UsuarioController::class, 'update'])->name('admin.usuarios.update')->middleware('auth');
 Route::delete('/admin/usuario/{id}', [App\Http\Controllers\UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy')->middleware('auth');
 
+// Rutas para el Panel de Grabación (DeckLink Quad 2)
+Route::get('/admin/grabaciones', [App\Http\Controllers\GrabacionController::class, 'index'])->name('admin.grabaciones.index')->middleware('auth');
+Route::put('/admin/grabaciones/{id}/toggle', [App\Http\Controllers\GrabacionController::class, 'toggleGrabacion'])->name('admin.grabaciones.toggle')->middleware('auth');
+
 
 require __DIR__.'/settings.php';

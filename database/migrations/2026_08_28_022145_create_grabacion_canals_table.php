@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('grabacion_canals', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre'); // Ej: Cámara 1, Master, etc.
+            $table->integer('canal_index')->unique(); // Identificador de la DeckLink (0, 1, 2, 3)
+            $table->string('estado')->default('detenido'); // detenido, grabando, error
+            $table->string('archivo_actual')->nullable(); // Ruta o nombre del archivo que se está generando
+            $table->string('resolucion')->default('1080p5994'); // Formato de video SDI
             $table->timestamps();
         });
     }
